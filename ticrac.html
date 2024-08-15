@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+#alonzo{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+   height:937px;
+   width:1909px;;
+    background-color: rgb(163, 30, 30);
+}
+
+#inside{
+   
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    
+    background-color: green;
+}
+
+    </style>
+</head>
+<body>
+    <div id="alonzo">
+        <div id="inside">
+
+<button id="bt1">
+    bt1
+</button>
+<button id="bt2">
+   bt2
+</button >
+<button id = "bt3">
+   bt3
+</button>
+<button id="bt4">
+    bt4
+</button>
+<button id="bt5">
+    bt5
+</button >
+<button id="bt6">
+    bt6
+</button>
+<button id="bt7">
+    bt7
+</button>
+<button id="bt8">
+    bt8
+<button id="bt9">
+    bt9
+</button>
+
+        </div>
+    
+       <button id="restart"> restart</button>
+    </div>
+    <script>
+        let jamming = true;
+      let orig = 0 ;
+        let pinger = 0 ;
+        let counter = 0;
+        let  btn1 = true;
+        let  btn2 = true;
+        let  btn3 = true;
+        let  btn4 = true;
+        let  btn5 = true;
+        let  btn6 = true;
+        let  btn7 = true;
+        let  btn8 = true;
+        let  btn9 = true;
+        let checkWin = true;
+        let checkWin2 = true;      
+        const bt1 = document.getElementById("bt1")  
+        const bt2 = document.getElementById("bt2")
+        const bt3 = document.getElementById("bt3")
+        const bt4 = document.getElementById("bt4")
+        const bt5 = document.getElementById("bt5")
+        const bt6 = document.getElementById("bt6")
+        const bt7 = document.getElementById("bt7")
+        const bt8 = document.getElementById("bt8")
+        const bt9 = document.getElementById("bt9")
+        array  =  [ [ [" "],[" "],[" "]],[[" "],[" "],[" "],[" "]],[ [" "],[" "],[" "]] ]
+        
+       // console.log(array[2][2]) // sue
+       function startGame()
+       {
+
+      
+
+       }
+       function checker()
+       {
+if((array[0][0] == "X" && array[0][1]=="X" && array[0][2] == "X") ||(array[1][0] =="X"&& array[1][1] =="X" &&array[1][2]=="X") || (array[2][0] =="X" && array[2][1]=="X" && array[2][2]=="X")
+||(array[0][0]=="X" &&array[1][0]=="X"&&array[2][0]=="X") ||(array[0][1]=="X"&&array[1][1]=="X"&&array[2][1]=="X")||
+(array[0][2]=="X"&&array[1][2]=="X"&&array[2][2]=="X")||(array[0][0]=="X"&&array[1][1]=="X"&&array[2][2]=="X") || (array[2][0]=="X"&&array[1][1]=="X"&&array[0][2]=="X"))
+{ 
+    checkWin = false;
+    alert("yOU FUCKING WIN!!!")
+   
+}
+if((array[0][0] == "O" && array[0][1]=="O" && array[0][2] == "O") ||(array[1][0] =="O"&& array[1][1] =="O" &&array[1][2]=="O") || (array[2][0] =="O" && array[2][1]=="O" && array[2][2]=="O")
+||(array[0][0]=="O" &&array[1][0]=="O"&&array[2][0]=="O") ||(array[0][1]=="O"&&array[1][1]=="O"&&array[2][1]=="O")||
+(array[0][2]=="O"&&array[1][2]=="O"&&array[2][2]=="O")||(array[0][0]=="O"&&array[1][1]=="O"&&array[2][2]=="O") || (array[2][0]=="O"&&array[1][1]=="O"&&array[0][2]=="O"))
+{
+    checkWin2 =false
+    alert("yOU FUCKING WIN!!!")
+}
+        /*
+        for(let i =0 ; i < array.length; i++)
+        {
+            for(let j = 0;  j < array.length; j++ )
+            {
+
+                array[i][j];
+
+            }
+
+        }
+        */
+
+
+
+       }
+       function checkDraw()
+       {
+        if(orig >= 9  )
+        {
+          
+          jamming = false;
+orig = 0 ;
+return   alert("Drow!")
+        }
+
+       }
+      
+        function restart()
+        {
+            if( checkWin == false || checkWin2 == false || jamming == false)
+            {alert("restart")
+            jamming = true;
+                bt1.innerHTML =" ";
+               bt2.innerHTML =" ";
+                bt3.innerHTML =" ";
+                bt4.innerHTML =" ";
+                bt5.innerHTML =" ";
+                bt6.innerHTML =" ";
+                bt7.innerHTML =" ";
+                bt8.innerHTML =" ";
+                bt9.innerHTML =" ";
+            //  orig = 0 ;
+       pinger = 0 ;
+         counter = 0;
+                /*                bt1.removeAttribute("style");
+                bt2.removeAttribute("style");
+                bt3.removeAttribute("style");
+                bt4.removeAttribute("style");
+                bt5.removeAttribute("style");
+                bt6.removeAttribute("style");
+                bt7.removeAttribute("style");
+                bt8.removeAttribute("style");
+                bt9.removeAttribute("style");
+                */
+              
+                bt1.style.color = "black";
+                bt1.style.fontSize = "30px";
+                bt1.style.fontWeight = "bold";
+                bt1.style.textTransform = "uppercase";
+               bt1.style.textAlign = "center";
+                bt1.style.backgroundColor = "white";
+                bt1.style.padding = "10px";
+                bt1.style.borderRadius = "10px";
+                bt1.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+            
+                btn1 = true;
+                 btn2 = true;
+                  btn3 = true;
+               btn4 = true;
+                 btn5 = true;
+                  btn6 = true;
+                 btn7 = true;
+                btn8 = true;
+                 btn9 = true;
+            
+               
+                array  =  [ [ [" "],[" "],[" "]],[[" "],[" "],[" "],[" "]],[ [" "],[" "],[" "]] ]
+                pinger = 0 ;
+                checkWin = true;
+            }
+           
+
+        }
+document.getElementById("bt1").addEventListener("click",function(){
+ 
+     counter++
+      //  let bt1e = pinger++
+    //decriment by one what the fuck number is
+
+    //what would we decriment by one here
+    //what do we need to decr
+    // then  it would incriment 
+
+
+
+  
+   
+  
+    
+    //odd number
+    if (array[0][0] == "X" || array[0][0] == "O")
+    {
+   return alert("slot is occupied");
+    }
+   
+    if(pinger % 2 != 0 && btn1  == true )
+    {
+         orig++;
+        pinger++;
+        bt1.innerHTML = "O";
+        bt1.style.color = "blue";
+        bt1.style.fontSize = "30px";
+        bt1.style.fontWeight = "bold";
+        bt1.style.textTransform = "uppercase";
+        bt1.style.textAlign = "center";
+       bt1.style.backgroundColor = "yellow";
+       bt1.style.padding = "10px";
+       bt1.style.borderRadius = "10px";
+       bt1.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+       bt1.style.transition = "all 0.4s ease-in-out";
+        
+       bt1.style.zIndex = "1000";
+       bt1.style.position
+        array[0][0]= "O"
+        btn1 = false;
+       
+checker();
+checkDraw()
+restart();
+    }
+    else if (pinger % 2 == 0 && btn1 == true){
+        pinger++;
+        orig++;
+        bt1.innerHTML = "X";
+        bt1.style.color = "blue";
+        bt1.style.fontSize = "30px";
+        bt1.style.fontWeight = "bold";
+        bt1.style.textTransform = "uppercase";
+        bt1.style.textAlign = "center";
+       bt1.style.backgroundColor = "yellow";
+       bt1.style.padding = "10px";
+       bt1.style.borderRadius = "10px";
+       bt1.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+       bt1.style.transition = "all 0.4s ease-in-out";
+        
+       bt1.style.zIndex = "1000";
+       bt1.style.position
+        array[0][0]= "X"
+        btn1 = false;
+       
+        checker();
+        checkDraw()
+        restart();
+    }
+   
+  
+
+    
+})        
+document.getElementById("bt2").addEventListener("click",function(){
+    counter++
+    orig++;
+   // let bt2e = pinger++
+    //odd number
+    if (array[0][1] == "X" || array[0][1] == "O")
+    {
+   return alert("slot is occupied");
+    }
+    if(pinger % 2 != 0 && btn2 == true)
+    {
+        pinger++;
+        bt2.innerHTML = "O";
+        bt2.style.color = "blue";
+        bt2.style.fontSize = "30px";
+        bt2.style.fontWeight = "bold";
+        bt2.style.textTransform = "uppercase";
+        bt2.style.textAlign = "center";
+       bt2.style.backgroundColor = "yellow";
+       bt2.style.padding = "10px";
+       bt2.style.borderRadius = "10px";
+       bt2.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+       bt2.style.transition = "all 0.4s ease-in-out";
+        
+       bt2.style.zIndex = "1000";
+       bt2.style.position
+        array[0][1]= "O"
+        btn2 =false
+       
+        checker();
+        checkDraw()
+        restart();
+    }
+    else if(pinger % 2 == 0 && btn2 == true){
+        pinger++;
+        orig++;
+        bt2.innerHTML = "X";
+        bt2.style.color = "blue";
+        bt2.style.fontSize = "30px";
+        bt2.style.fontWeight = "bold";
+        bt2.style.textTransform = "uppercase";
+        bt2.style.textAlign = "center";
+       bt2.style.backgroundColor = "yellow";
+       bt2.style.padding = "10px";
+       bt2.style.borderRadius = "10px";
+       bt2.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+       bt2.style.transition = "all 0.4s ease-in-out";
+        
+       bt2.style.zIndex = "1000";
+       bt2.style.position
+       array[0][1]= "X"
+       btn2= false;
+       
+       checker();
+       checkDraw()
+       restart();
+    }
+   
+  
+
+})        
+document.getElementById("bt3").addEventListener("click",function(){
+    counter++
+   
+    //odd number
+    if (array[0][2] == "X" || array[0][2] == "O")
+    {
+   return alert("slot is occupied");
+    }
+    if(pinger % 2 != 0 && btn3 == true)
+    {
+        pinger++;
+        orig++;
+        bt3.innerHTML = "O";
+        bt3.style.color = "blue";
+        bt3.style.fontSize = "30px";
+        bt3.style.fontWeight = "bold";
+        bt3.style.textTransform = "uppercase";
+        bt3.style.textAlign = "center";
+       bt3.style.backgroundColor = "yellow";
+       bt3.style.padding = "10px";
+       bt3.style.borderRadius = "10px";
+       bt3.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+       bt3.style.transition = "all 0.4s ease-in-out";
+        
+       bt3.style.zIndex = "1000";
+       bt3.style.position
+      array[0][2]= "O"
+      btn3 = false;
+      
+      checker();
+      checkDraw()
+      restart();
+    }
+    else if(pinger % 2 == 0 && btn3 == true){
+        pinger++;
+        orig++;
+        bt3.innerHTML = "X";
+        bt3.style.color = "blue";
+        bt3.style.fontSize = "30px";
+        bt3.style.fontWeight = "bold";
+        bt3.style.textTransform = "uppercase";
+        bt3.style.textAlign = "center";
+       bt3.style.backgroundColor = "yellow";
+       bt3.style.padding = "10px";
+       bt3.style.borderRadius = "10px";
+       bt3.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+       bt3.style.transition = "all 0.4s ease-in-out";
+        
+       bt3.style.zIndex = "1000";
+       bt3.style.position
+      array[0][2]= "X"
+      btn3= false;
+     
+      checker();
+      checkDraw()
+      restart();
+    }
+   
+   
+ 
+})        
+document.getElementById("bt4").addEventListener("click",function(){
+    counter++
+  
+    //odd number
+  
+ if (array[1][0] == "X" || array[1][0] == "O")
+ {
+return alert("slot is occupied");
+ }
+    if(pinger % 2 != 0 && btn4 == true)
+    {
+        pinger++;
+        orig++;
+       bt4.innerHTML = "O";
+       bt4.style.color = "blue";
+       bt4.style.fontSize = "30px";
+       bt4.style.fontWeight = "bold";
+       bt4.style.textTransform = "uppercase";
+       bt4.style.textAlign = "center";
+      bt4.style.backgroundColor = "yellow";
+      bt4.style.padding = "10px";
+      bt4.style.borderRadius = "10px";
+      bt4.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt4.style.transition = "all 0.4s ease-in-out";
+        
+      bt4.style.zIndex = "1000";
+      bt4.style.position
+      array[1][0]= "O"
+      btn4 = false;
+      
+      checker();
+      checkDraw()
+      restart();
+    }
+    else if(pinger % 2 == 0 && btn4 == true){
+        pinger++;
+        orig++;
+       bt4.innerHTML = "X";
+       bt4.style.color = "blue";
+       bt4.style.fontSize = "30px";
+       bt4.style.fontWeight = "bold";
+       bt4.style.textTransform = "uppercase";
+       bt4.style.textAlign = "center";
+      bt4.style.backgroundColor = "yellow";
+      bt4.style.padding = "10px";
+      bt4.style.borderRadius = "10px";
+      bt4.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt4.style.transition = "all 0.4s ease-in-out";
+        
+      bt4.style.zIndex = "1000";
+      bt4.style.position
+        array[1][0]= "X"
+        btn4= false;
+       
+        checker();
+        checkDraw()
+        restart();
+    }
+   
+   
+
+})        
+document.getElementById("bt5").addEventListener("click",function(){
+    counter++
+   
+    //odd number
+  
+ if (array[1][1] == "X" || array[1][1] == "O")
+ {
+return alert("slot is occupied");
+ }
+    if(pinger  % 2 != 0 && btn5 == true )
+    {
+
+        pinger++
+        orig++;
+       bt5.innerHTML = "O";
+       bt5.style.color = "blue";
+       bt5.style.fontSize = "30px";
+       bt5.style.fontWeight = "bold";
+       bt5.style.textTransform = "uppercase";
+       bt5.style.textAlign = "center";
+      bt5.style.backgroundColor = "yellow";
+      bt5.style.padding = "10px";
+      bt5.style.borderRadius = "10px";
+      bt5.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt5.style.transition = "all 0.4s ease-in-out";
+        
+      bt5.style.zIndex = "1000";
+      bt5.style.position
+       array[1][1]= "O"
+       btn5 = false;
+       
+       checker();
+       checkDraw()
+       restart();
+    }
+    else if(pinger % 2 == 0 && btn5 == true){
+        pinger++;
+        orig++;
+       bt5.innerHTML = "X";
+       bt5.style.color = "blue";
+       bt5.style.fontSize = "30px";
+       bt5.style.fontWeight = "bold";
+       bt5.style.textTransform = "uppercase";
+       bt5.style.textAlign = "center";
+      bt5.style.backgroundColor = "yellow";
+      bt5.style.padding = "10px";
+      bt5.style.borderRadius = "10px";
+      bt5.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt5.style.transition = "all 0.4s ease-in-out";
+        
+      bt5.style.zIndex = "1000";
+      bt5.style.position
+      array[1][1]= "X"
+      btn5 =false;
+     
+      checker();
+      checkDraw()
+      restart();
+    }
+   
+ 
+})        
+document.getElementById("bt6").addEventListener("click",function(){
+    counter++
+   
+    //odd number
+   
+ if (array[1][2] == "X" || array[1][2] == "O")
+ {
+return alert("slot is occupied");
+ }
+    if(pinger % 2 != 0 && btn6 == true )
+    {
+        pinger++;
+        orig++;
+       bt6.innerHTML = "O";
+       bt6.style.color = "blue";
+       bt6.style.fontSize = "30px";
+       bt6.style.fontWeight = "bold";
+       bt6.style.textTransform = "uppercase";
+       bt6.style.textAlign = "center";
+      bt6.style.backgroundColor = "yellow";
+      bt6.style.padding = "10px";
+      bt6.style.borderRadius = "10px";
+      bt6.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt6.style.transition = "all 0.4s ease-in-out";
+        
+      bt6.style.zIndex = "1000";
+      bt6.style.position
+       array[1][2]= "O"
+       btn6 =false;
+       
+       checker();
+       checkDraw()
+       restart();
+    }
+    else if(pinger % 2 == 0 && btn6 == true){
+        pinger++;
+        orig++;
+       bt6.innerHTML = "X";
+       bt6.style.color = "blue";
+       bt6.style.fontSize = "30px";
+       bt6.style.fontWeight = "bold";
+       bt6.style.textTransform = "uppercase";
+       bt6.style.textAlign = "center";
+      bt6.style.backgroundColor = "yellow";
+      bt6.style.padding = "10px";
+      bt6.style.borderRadius = "10px";
+      bt6.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt6.style.transition = "all 0.4s ease-in-out";
+        
+      bt6.style.zIndex = "1000";
+      bt6.style.position
+       array[1][2]= "X"
+       btn6 =false;
+      
+       checker();
+       checkDraw()
+       restart();
+    }
+   
+
+})        
+document.getElementById("bt7").addEventListener("click",function(){
+    counter++
+  
+    //odd number
+    
+ if (array[2][0] == "X" || array[2][0] == "O")
+ {
+return alert("slot is occupied");
+ }
+    if(pinger % 2 != 0 && btn7 == true )
+    {
+        pinger++;
+        orig++;
+       bt7.innerHTML = "O";
+       bt7.style.color = "blue";
+       bt7.style.fontSize = "30px";
+       bt7.style.fontWeight = "bold";
+       bt7.style.textTransform = "uppercase";
+       bt7.style.textAlign = "center";
+      bt7.style.backgroundColor = "yellow";
+      bt7.style.padding = "10px";
+      bt7.style.borderRadius = "10px";
+      bt7.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt7.style.transition = "all 0.4s ease-in-out";
+        
+      bt7.style.zIndex = "1000";
+      bt7.style.position
+        array[2][0]= "O"
+        btn7 =false;
+       
+        checker();
+        checkDraw()
+        restart();
+    }
+    else if(pinger  % 2 == 0 && btn7 == true ){
+        pinger++;
+        orig++;
+       bt7.innerHTML = "X";
+       bt7.style.color = "blue";
+       bt7.style.fontSize = "30px";
+       bt7.style.fontWeight = "bold";
+       bt7.style.textTransform = "uppercase";
+       bt7.style.textAlign = "center";
+      bt7.style.backgroundColor = "yellow";
+      bt7.style.padding = "10px";
+      bt7.style.borderRadius = "10px";
+      bt7.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt7.style.transition = "all 0.4s ease-in-out";
+        
+      bt7.style.zIndex = "1000";
+      bt7.style.position
+        array[2][0]= "X"
+        btn7 = false;
+
+        checker();
+        checkDraw()
+        restart();
+    }
+   
+ 
+})        
+document.getElementById("bt8").addEventListener("click",function(){
+    counter++
+  
+    //odd number
+    
+ if (array[2][1] == "X" || array[2][1] == "O")
+ {
+return alert("slot is occupied");
+ }
+    if(pinger % 2 !=  0 &&  btn8 == true )
+    {
+        bt8.innerHTML = "O";
+       bt8.style.color = "blue";
+       bt8.style.fontSize = "30px";
+       bt8.style.fontWeight = "bold";
+       bt8.style.textTransform = "uppercase";
+       bt8.style.textAlign = "center";
+      bt8.style.backgroundColor = "yellow";
+      bt8.style.padding = "10px";
+      bt8.style.borderRadius = "10px";
+      bt8.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt8.style.transition = "all 0.4s ease-in-out";
+        
+      bt8.style.zIndex = "1000";
+      bt8.style.position
+    array[2][1]= "O"
+   
+    checker();
+    checkDraw()
+    restart();
+    }
+    else if(pinger  % 2 ==  0  &&  btn8 == true ){
+        pinger++
+        orig++;
+       bt8.innerHTML = "X";
+       bt8.style.color = "blue";
+       bt8.style.fontSize = "30px";
+       bt8.style.fontWeight = "bold";
+       bt8.style.textTransform = "uppercase";
+       bt8.style.textAlign = "center";
+      bt8.style.backgroundColor = "yellow";
+      bt8.style.padding = "10px";
+      bt8.style.borderRadius = "10px";
+      bt8.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt8.style.transition = "all 0.4s ease-in-out";
+        
+      bt8.style.zIndex = "1000";
+      bt8.style.position
+        array[2][1]= "X"
+        btn8 = false
+       
+        checker();
+        checkDraw()
+        restart();
+    }
+   
+ 
+})        
+document.getElementById("bt9").addEventListener("click",function(){
+    counter++
+    
+    //odd number
+ 
+    if (array[2][2] == "X" || array[2][2] == "O")
+    {
+   return alert("slot is occupied");
+    }
+    if(pinger % 2 != 0 && btn9 == true )
+    { orig++;
+        pinger++
+       bt9.innerHTML = "O";
+       bt9.style.color = "blue";
+       bt9.style.fontSize = "30px";
+       bt9.style.fontWeight = "bold";
+       bt9.style.textTransform = "uppercase";
+       bt9.style.textAlign = "center";
+      bt9.style.backgroundColor = "yellow";
+      bt9.style.padding = "10px";
+      bt9.style.borderRadius = "10px";
+      bt9.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt9.style.transition = "all 0.4s ease-in-out";
+        
+      bt9.style.zIndex = "1000";
+      bt9.style.position
+      array[2][2]= "O"
+      btn9 = false
+      
+      checker();
+      checkDraw()
+      restart();
+    }
+    else if(pinger % 2 == 0 && btn9 == true){
+        pinger++;
+        orig++;
+       bt9.innerHTML = "X";
+       bt9.style.color = "blue";
+       bt9.style.fontSize = "30px";
+       bt9.style.fontWeight = "bold";
+       bt9.style.textTransform = "uppercase";
+       bt9.style.textAlign = "center";
+      bt9.style.backgroundColor = "yellow";
+      bt9.style.padding = "10px";
+      bt9.style.borderRadius = "10px";
+      bt9.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.5)";
+      bt9.style.transition = "all 0.4s ease-in-out";
+        
+      bt9.style.zIndex = "1000";
+      bt9.style.position
+        array[2][2]= "X"
+        btn9 = false;
+       
+        checker();
+        checkDraw()
+        restart();
+    }
+   
+ 
+})        
+    </script>
+</body>
+</html>
